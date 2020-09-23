@@ -5,4 +5,10 @@ class Blogger < ApplicationRecord
 
     has_many :posts
     has_many :destinations, through: :posts
+
+    def most_liked_post
+        self.posts.max_by do |post|
+            post.likes
+        end
+    end
 end

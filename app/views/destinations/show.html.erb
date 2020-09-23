@@ -1,0 +1,32 @@
+<h1><%= @destination.name %></h1>
+
+<div>Most Recent Posts</div>
+<ul>
+ <% @destination.recent_posts.last(5).each do |post| %>
+    <li>
+    <%= link_to post.title, post_path(post.id) %>
+    
+    </li>
+    <% end %>
+</ul>
+
+<div>
+    Featured Post: <% if @destination.most_liked_post != nil %>
+                        <%= @destination.most_liked_post.title %> 
+                    <% else %>
+                        <%"No post" %>
+                    <% end %>                     
+</div>
+
+<div>
+    Average Blogger Age: <%= @destination.average_age %>
+</div>
+
+<br>
+<br>
+<%= link_to 'Back to All Destinations', destinations_path %>
+
+
+
+
+

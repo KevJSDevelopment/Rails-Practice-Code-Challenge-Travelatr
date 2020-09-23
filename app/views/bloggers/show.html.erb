@@ -1,3 +1,12 @@
 <h1> <%= @blogger.name %> </h1>
 
+
+<div> Most Liked Post:<% if @blogger.most_liked_post != nil %>
+                            <%= @blogger.most_liked_post.title %> 
+                        <% else %>
+                            <%"No post" %>
+                        <% end %>  
+</div>
+<br>
+
 <div> <%= @blogger.name %>'s total likes: <%= @sum %> </div>
