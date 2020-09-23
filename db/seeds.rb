@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Blogger.delete_all
+Post.delete_all
+Destination.delete_all
 
 30.times do 
   Destination.create({
@@ -13,7 +16,6 @@
     country: Faker::Address.country
   })
 end
-
 
 10.times do
   blogger = Blogger.create({

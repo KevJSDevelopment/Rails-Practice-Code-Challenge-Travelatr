@@ -1,0 +1,13 @@
+<h1> <%= @post.title %> </h1>
+
+<div> Likes: <%= @post.likes %> </div>
+
+<%= link_to "Go to #{@post.blogger.name}'s page'", blogger_path(@post.blogger.id)%>
+<br>
+<%= link_to "Go to #{@post.destination.name}'s page'", destination_path(@post.destination.id)%>
+<br>
+<%= link_to "Edit #{@post.title}", edit_post_path(@post.id) %>
+<br>
+<%= link_to "See all posts", posts_path %>
+
+<%= button_to "Like this post", post_path(@post.id), method: 'post' %>
