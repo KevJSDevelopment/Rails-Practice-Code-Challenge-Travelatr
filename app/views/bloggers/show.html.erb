@@ -10,3 +10,9 @@
 <br>
 
 <div> <%= @blogger.name %>'s total likes: <%= @sum %> </div>
+
+<br>
+<h3> Top 5 destinations: </h3>
+<% @blogger.top_destinations.each do |destination|%>
+    <div> <li> <%= destination %> </li></div>
+    <%end%>

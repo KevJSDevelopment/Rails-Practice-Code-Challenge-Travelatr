@@ -11,4 +11,20 @@ class Blogger < ApplicationRecord
             post.likes
         end
     end
+
+    def top_destinations
+        counts = Hash.new 0
+
+        self.posts.each do |post|
+            counts[post.title] += 1
+        end
+
+        counts = counts.sort_by { |title, count| count}
+        top_5 = counts.max_by(5) do |title, count|
+            count
+        end
+        x = top_5.map do |array|
+            array[0]
+        end
+    end
 end
